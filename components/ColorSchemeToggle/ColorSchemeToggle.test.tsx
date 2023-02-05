@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-render-in-setup */
 import { render, screen } from '@testing-library/react';
 import { ColorSchemeProvider } from '@mantine/core';
 import { ColorSchemeToggle } from '.';
@@ -15,11 +16,13 @@ describe('<ColorSchemeToggle />', () => {
   });
 
   test('loads the button', async () => {
+    //@ts-ignore
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
   test('calls the function when pressed', async () => {
     screen.getByRole('button').click();
+    //@ts-ignore
     expect(mockToggleColorScheme).toHaveBeenCalled();
   });
 });

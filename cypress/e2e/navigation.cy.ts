@@ -6,6 +6,7 @@ describe('Navigation', () => {
   cypressConfig.viewPorts.forEach((viewPort) => {
     context(viewPort, () => {
       beforeEach(() => {
+        //@ts-ignore
         cy.viewport(viewPort);
         cy.visit('http://localhost:3000');
       });
