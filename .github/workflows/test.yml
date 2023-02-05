@@ -23,22 +23,22 @@ jobs:
       - name: Install and build
         run: yarn install --force
 
-      # - name: Install Docusaurus modules
-      #   run: cd ./docusaurus && yarn install --force
-
       - name: Validate TypeScript
-        run: yarn typescript && yarn typescript:example
+        run: npm run typecheck
 
       - name: Validate ESLint
-        run: yarn lint && yarn lint:example
+        run: npm run lint
 
-      - name: Run unit tests
-        run: yarn --cwd test
+      - name: Unit tests
+        run: npm run test
 
-      # - name: Run cypress tests
-      #   run: yarn --cwd cypress run
+      - name: Cypress e2e tests
+        run: npm run e2e
 
-      - name: Run tests
+      - name: Cypress component tests
+        run: npm run cypress:headless
+
+      - name: Reassure tests
         run: yarn --cwd packages/reassure-compare test
 
       - name: Run performance tests
