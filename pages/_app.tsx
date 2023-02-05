@@ -24,6 +24,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <link rel="shortcut icon" href="/favicon.svg" />
         <style>
+          {/* eslint-disable-next-line react/no-unescaped-entities*/}
           @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
         </style>
       </Head>
