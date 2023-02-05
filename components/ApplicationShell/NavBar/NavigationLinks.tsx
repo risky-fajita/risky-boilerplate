@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconGitPullRequest, IconAlertCircle } from '@tabler/icons';
+import { IconHome, IconQuestionMark } from '@tabler/icons';
 import { ThemeIcon, UnstyledButton, Group, Text } from '@mantine/core';
 import Link from 'next/link';
 
@@ -13,35 +13,35 @@ interface MainLinkProps {
 function MainLink({ icon, color, label, path }: MainLinkProps) {
   return (
     <Link href={path} passHref>
-    <UnstyledButton
-      sx={(theme) => ({
-        display: 'block',
-        width: '100%',
-        padding: theme.spacing.xs,
-        borderRadius: theme.radius.sm,
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+      <UnstyledButton
+        sx={(theme) => ({
+          display: 'block',
+          width: '100%',
+          padding: theme.spacing.xs,
+          borderRadius: theme.radius.sm,
+          color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
 
-        '&:hover': {
-          backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-        },
-      })}
-    >
-      <Group>
-        <ThemeIcon color={color} variant="light">
-          {icon}
-        </ThemeIcon>
+          '&:hover': {
+            backgroundColor:
+              theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+          },
+        })}
+      >
+        <Group>
+          <ThemeIcon color={color} variant="light">
+            {icon}
+          </ThemeIcon>
 
-        <Text size="sm">{label}</Text>
-      </Group>
-    </UnstyledButton>
+          <Text size="sm">{label}</Text>
+        </Group>
+      </UnstyledButton>
     </Link>
   );
 }
 
 const data = [
-  { icon: <IconGitPullRequest size={16} />, color: 'blue', label: 'Home', path: '/' },
-  { icon: <IconAlertCircle size={16} />, color: 'teal', label: 'About', path: '/about' },
+  { icon: <IconHome size={16} />, color: 'blue', label: 'Home', path: '/' },
+  { icon: <IconQuestionMark size={16} />, color: 'teal', label: 'About', path: '/about' },
 ];
 
 export function MainLinks() {

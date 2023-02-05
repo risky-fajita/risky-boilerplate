@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../**/*.story.mdx', '../**/*.story.@(js|jsx|ts|tsx)'],
+  stories: ['../**/*.story.mdx', '../**/*.story.@(js|jsx|ts|tsx)', '../**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     'storybook-dark-mode',
     {

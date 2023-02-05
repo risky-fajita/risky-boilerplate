@@ -1,7 +1,9 @@
+import { TitleText } from '../components/Typography';
+
 export default function About() {
   return (
     <>
-      <p> About </p>
+      <TitleText> About </TitleText>
     </>
   );
 }

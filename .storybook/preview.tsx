@@ -1,8 +1,9 @@
+import React from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { MantineProvider, ColorSchemeProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 
-export const parameters = { layout: 'fullscreen' };
+export const parameters = { layout: 'fullscreen', actions: { argTypesRegex: '^on.*' } };
 
 function ThemeWrapper(props: { children: React.ReactNode }) {
   return (

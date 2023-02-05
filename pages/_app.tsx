@@ -23,6 +23,9 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         <title>{globalConfig.appName}</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <link rel="shortcut icon" href="/favicon.svg" />
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+        </style>
       </Head>
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
