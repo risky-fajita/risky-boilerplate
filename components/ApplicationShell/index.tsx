@@ -4,17 +4,17 @@ import {
   Navbar,
   Header,
   Footer,
-  Aside,
   Text,
-  MediaQuery,
   Burger,
   useMantineTheme,
 } from '@mantine/core';
+import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
+import { globalConfig } from '../globalConfig';
 
 interface ApplicationShellProps {
   children: React.ReactNode;
 }
-export const ApplicationShell = ({children}: ApplicationShellProps) => {
+export const ApplicationShell = ({ children }: ApplicationShellProps) => {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   return (
@@ -27,16 +27,20 @@ export const ApplicationShell = ({children}: ApplicationShellProps) => {
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
       navbar={
-        <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
-          <Text>Application navbar</Text>
-        </Navbar>
-      }
-      aside={
-        <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
-          <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-            <Text>Application sidebar</Text>
-          </Aside>
-        </MediaQuery>
+        <>
+          {opened && (
+          <Navbar
+            p="md"
+            hiddenBreakpoint="lg"
+            hidden={!opened}
+            width={{ sm: 200, lg: 300 }}
+          >
+            <Text>Application navbar</Text>
+            <ColorSchemeToggle />
+          </Navbar>
+          )
+          }
+        </>
       }
       footer={
         <Footer height={60} p="md">
@@ -46,7 +50,6 @@ export const ApplicationShell = ({children}: ApplicationShellProps) => {
       header={
         <Header height={{ base: 50, md: 70 }} p="md">
           <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
-            <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
               <Burger
                 opened={opened}
                 onClick={() => setOpened((o) => !o)}
@@ -54,16 +57,12 @@ export const ApplicationShell = ({children}: ApplicationShellProps) => {
                 color={theme.colors.gray[6]}
                 mr="xl"
               />
-            </MediaQuery>
-
-            <Text>Application header</Text>
+            <Text>{globalConfig.appName}</Text>
           </div>
         </Header>
       }
     >
-      <>
       {children}
-      </>
     </AppShell>
   );
-}
+};
