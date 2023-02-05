@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import {
   AppShell,
-  Navbar,
   Header,
   Footer,
   Text,
   Burger,
   useMantineTheme,
 } from '@mantine/core';
-import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import { globalConfig } from '../globalConfig';
+import { NavigationSideBar } from './NavBar';
 
 interface ApplicationShellProps {
   children: React.ReactNode;
@@ -27,20 +26,7 @@ export const ApplicationShell = ({ children }: ApplicationShellProps) => {
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
       navbar={
-        <>
-          {opened && (
-          <Navbar
-            p="md"
-            hiddenBreakpoint="lg"
-            hidden={!opened}
-            width={{ sm: 200, lg: 300 }}
-          >
-            <Text>Application navbar</Text>
-            <ColorSchemeToggle />
-          </Navbar>
-          )
-          }
-        </>
+        <NavigationSideBar visible={opened} />
       }
       footer={
         <Footer height={60} p="md">
