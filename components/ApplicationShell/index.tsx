@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AppShell, Header, Footer, Text, Burger, useMantineTheme } from '@mantine/core';
+import { AppShell, Header, Footer, Burger, useMantineTheme } from '@mantine/core';
 import { globalConfig } from '../globalConfig';
 import { NavigationSideBar } from './NavBar';
 import { TitleText } from '../Typography';
