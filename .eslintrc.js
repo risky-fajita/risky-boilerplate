@@ -17,5 +17,7 @@ module.exports = {
   },
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'jest/expect-expect': 'off',
+    'testing-library/no-render-in-setup': 'off',
   },
 };
