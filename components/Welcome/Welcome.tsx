@@ -1,5 +1,6 @@
 import { Title, Text, Anchor } from '@mantine/core';
 import useStyles from './Welcome.styles';
+import { globalConfig } from '../globalConfig';
 
 export function Welcome() {
   const { classes } = useStyles();
@@ -7,9 +8,9 @@ export function Welcome() {
   return (
     <>
       <Title className={classes.title} align="center" mt={100}>
-        Welcome to{' '}
+        Welcome to the{' '}
         <Text inherit variant="gradient" component="span">
-          Mantine
+          {globalConfig.appName}
         </Text>
       </Title>
       <Text color="dimmed" align="center" size="lg" sx={{ maxWidth: 580 }} mx="auto" mt="xl">
