@@ -1,0 +1,51 @@
+name: Main
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: ['**']
+
+jobs:
+  build-validate-pref-tests:
+    name: Build, validate & run performance tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'yarn'
+
+      - name: Install and build
+        run: yarn install --force
+
+      - name: Install Docusaurus modules
+        run: cd ./docusaurus && yarn install --force
+
+      - name: Validate TypeScript
+        run: yarn typescript && yarn typescript:example
+
+      - name: Validate ESLint
+        run: yarn lint && yarn lint:example
+
+      - name: Run tests
+        run: yarn --cwd packages/reassure-compare test
+
+      - name: Run performance tests
+        run: cd examples/native && ./reassure-tests.sh
+
+      - name: Run Danger.js
+        run: yarn danger ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v3
+      - name: 'Dependency Review'
+        uses: actions/dependency-review-action@v2
