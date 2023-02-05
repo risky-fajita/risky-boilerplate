@@ -16,7 +16,11 @@
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
     "storybook": "start-storybook -p 7001",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test dev http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -67,7 +71,8 @@
     "eslint-plugin-testing-library": "^5.2.0",
     "jest": "^27.5.1",
     "prettier": "^2.7.1",
-    "reassure": "^0.7.1",
+    "reassure": "^0.7.1",    
+    "start-server-and-test": "1.14.0",
     "storybook-addon-turbo-build": "^1.1.0",
     "storybook-dark-mode": "^1.1.2",
     "ts-jest": "^27.1.4",
