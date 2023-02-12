@@ -1,18 +1,16 @@
-import { Title, Text, Anchor } from '@mantine/core';
-import useStyles from './Welcome.styles';
+import { Text, Anchor } from '@mantine/core';
 import { globalConfig } from '../globalConfig';
+import { TitleText } from '../Typography';
 
 export function Welcome() {
-  const { classes } = useStyles();
-
   return (
     <>
-      <Title className={classes.title} align="center" mt={100}>
-        Welcome to the{' '}
-        <Text inherit variant="gradient" component="span">
+      <TitleText>
+        Welcome to the
+      </TitleText>
+        <TitleText gradiant>
           {globalConfig.appName}
-        </Text>
-      </Title>
+        </TitleText>
       <Text color="dimmed" align="center" size="lg" sx={{ maxWidth: 580 }} mx="auto" mt="xl">
         This starter Next.js project includes a minimal setup for server side rendering, if you want
         to learn more on Mantine + Next.js integration follow{' '}

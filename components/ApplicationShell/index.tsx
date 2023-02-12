@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { AppShell, Header, Footer, Burger, useMantineTheme } from '@mantine/core';
-import { globalConfig } from '../globalConfig';
-import { NavigationSideBar } from './NavBar';
-import { TitleText } from '../Typography';
+import { AppShell, useMantineTheme } from '@mantine/core';
+import { NavigationSideBar } from './NavigationSideBar';
+import { Header } from './Header';
+import { Footer } from './Footer';
 
 interface ApplicationShellProps {
   children: React.ReactNode;
@@ -20,29 +20,8 @@ export const ApplicationShell = ({ children }: ApplicationShellProps) => {
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
       navbar={<NavigationSideBar visible={opened} />}
-      footer={
-        <Footer height={60} p="md">
-          © {globalConfig.company} {new Date().getFullYear()}
-        </Footer>
-      }
-      header={
-        <Header height={{ base: 50, md: 70 }} p="md">
-          <div
-            data-cy="app-header"
-            style={{ display: 'flex', alignItems: 'center', height: '100%' }}
-          >
-            <Burger
-              id="menu-button"
-              opened={opened}
-              onClick={() => setOpened((o) => !o)}
-              size="sm"
-              color={theme.colors.gray[6]}
-              mr="xl"
-            />
-            <TitleText>{globalConfig.appName}</TitleText>
-          </div>
-        </Header>
-      }
+      footer={<Footer />}
+      header={<Header menuOpen={opened} setMenuOpen={setOpened} />}
     >
       {children}
     </AppShell>

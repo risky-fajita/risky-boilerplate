@@ -1,18 +1,25 @@
-import { Text } from '@mantine/core';
+import { Title } from '@mantine/core';
+import useStyles, { themeColours } from '../theme';
 
 interface TitleTextProps {
   children: string;
   gradiant?: boolean;
 }
-export const TitleText = ({ children, gradiant }: TitleTextProps) => (
-  <Text
-    variant={gradiant ? 'gradient' : 'text'}
-    gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
-    sx={{ fontFamily: 'Fredoka One' }}
-    ta="center"
-    fz="xl"
-    fw={700}
-  >
-    {children}
-  </Text>
-);
+export const TitleText = ({ children, gradiant }: TitleTextProps) => {
+  const { darkBlue, lightBlue } = themeColours;
+  const { classes } = useStyles();
+
+  return (
+    <Title
+      className={classes.title}
+      variant={gradiant ? 'gradient' : 'text'}
+      gradient={{ from: darkBlue, to: lightBlue, deg: 90 }}
+      sx={{ fontFamily: 'Fredoka One' }}
+      ta="center"
+      fz="xl"
+      fw={700}
+    >
+      {children}
+    </Title>
+  );
+};

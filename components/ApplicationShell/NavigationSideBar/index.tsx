@@ -1,7 +1,7 @@
 import { Navbar, ScrollArea } from '@mantine/core';
 import { ColorSchemeToggle } from '../../ColorSchemeToggle';
-import { MainLinks } from './NavigationLinks';
-import { NavigationHeader } from './NavigationHeader';
+import { MainLinks } from '../NavigationLinks';
+import { NavigationHeader } from '../NavigationHeader';
 
 interface NavigationSideBarProps {
   visible: boolean;
