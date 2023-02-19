@@ -62,7 +62,7 @@ jobs:
     name: Performance test
     runs-on: ubuntu-latest
     steps:
-     - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
