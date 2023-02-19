@@ -77,7 +77,7 @@ jobs:
         run: yarn --cwd packages/reassure-compare test
 
       - name: Run performance tests
-        run: cd examples/native && ./reassure-tests.sh
+        run: ./reassure-tests.sh
 
       - name: Run Danger.js
         run: yarn danger ci
