@@ -40,6 +40,9 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - name: Install and build
+        run: npm install
+
       - name: Unit tests
         run: npm run test
 
@@ -53,6 +56,9 @@ jobs:
     name: Performance test
     runs-on: ubuntu-latest
     steps:
+      - name: Install and build
+        run: npm install
+
       - name: Reassure tests
         run: yarn --cwd packages/reassure-compare test
 
