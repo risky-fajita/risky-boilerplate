@@ -24,8 +24,8 @@ jobs:
         run: npm install
 
 
-    - id: build-publish
-      uses: bitovi/github-actions-react-to-ghp@v1.2.0
-      with:
-        path: storybook-static
-        build_command: npm run storybook:build
+      - id: build-publish
+        uses: bitovi/github-actions-react-to-ghp@v1.2.0
+        with:
+          path: storybook-static
+          build_command: npm run storybook:build
