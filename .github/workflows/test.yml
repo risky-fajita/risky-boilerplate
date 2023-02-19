@@ -8,7 +8,32 @@ on:
 
 jobs:
   build-validate-pref-tests:
-    name: Build, validate & run performance tests
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+
+      - name: Install and build
+        run: npm install
+
+      - name: Unit tests
+        run: npm run test
+
+      - name: Cypress e2e tests
+        run: npm run e2e
+
+      - name: Cypress component tests
+        run: npm run cypress:headless
+
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,14 +57,18 @@ jobs:
       - name: Validate ESLint
         run: npm run lint
 
-      - name: Unit tests
-        run: npm run test
+  performance:
+    name: Performance test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Cypress e2e tests
-        run: npm run e2e
-
-      - name: Cypress component tests
-        run: npm run cypress:headless
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
 
       - name: Reassure tests
         run: yarn --cwd packages/reassure-compare test
