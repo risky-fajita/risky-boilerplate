@@ -30,7 +30,7 @@ jobs:
         run: npm run e2e:headless
 
       - name: Cypress component tests
-        run: npm run cypress:headless
+        run: npm run components:headless
 
   lint:
     name: Lint
