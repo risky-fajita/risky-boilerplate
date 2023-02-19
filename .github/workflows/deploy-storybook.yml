@@ -11,8 +11,21 @@ jobs:
       url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+
+      - name: Install and build
+        run: npm install
+
+
     - id: build-publish
       uses: bitovi/github-actions-react-to-ghp@v1.2.0
       with:
-        path: dist/storybook
+        path: storybook-static
         build_command: npm run storybook:build
