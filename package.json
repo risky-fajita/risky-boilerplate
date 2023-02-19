@@ -16,7 +16,7 @@
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
     "storybook": "start-storybook -p 7001",
-    "storybook:build": "build-storybook",
+    "storybook:build": "build-storybook -o docs",
     "components": "start-server-and-test dev http://localhost:3000 cypress --component",
     "components:headless": "start-server-and-test dev http://localhost:3000 cypress run --component",
     "e2e": "start-server-and-test dev http://localhost:3000 cypress open",
