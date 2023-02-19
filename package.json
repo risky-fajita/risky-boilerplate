@@ -19,8 +19,9 @@
     "storybook:build": "build-storybook",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
-    "components": "start-server-and-test dev http://localhost:3000 cypress --components",
-    "components:headless": "start-server-and-test dev http://localhost:3000 cypress:headless --components",
+    "cy:components:headless": "cypress run --component",
+    "components": "start-server-and-test dev http://localhost:3000 cypress --component",
+    "components:headless": "start-server-and-test dev http://localhost:3000 cy:components:headless",
     "e2e": "start-server-and-test dev http://localhost:3000 cypress",
     "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless"
   },
