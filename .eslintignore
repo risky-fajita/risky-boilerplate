@@ -1,1 +1,2 @@
 *.js
+cypress.config.ts
