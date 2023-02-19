@@ -1,37 +1,16 @@
-name: CI
+name: PR Checks
 
 on:
-  push:
-    branches: [master]
   pull_request:
     branches: ['**']
 
+permissions:
+  checks: write
+  contents: write
+  pull-requests: write
+  statuses: write
+
 jobs:
-  build-validate-pref-tests:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: 'npm'
-
-      - name: Install and build
-        run: npm install
-
-      - name: Unit tests
-        run: npm run test
-
-      - name: Cypress e2e tests
-        run: npm run e2e:headless
-
-      - name: Cypress component tests
-        run: npm run components:headless
-
   lint:
     name: Lint
     runs-on: ubuntu-latest
@@ -57,8 +36,8 @@ jobs:
       - name: Validate ESLint
         run: npm run lint
 
-  performance:
-    name: Performance test
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -70,6 +49,29 @@ jobs:
           node-version: 16.x
           cache: 'npm'
 
+      - name: Install and build
+        run: npm install
+
+      - name: Unit tests
+        run: npm run test
+
+      - name: Cypress e2e tests
+        run: npm run e2e:headless
+
+      - name: Cypress component tests
+        run: npm run components:headless
+
+  performance:
+    name: Performance test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
       - name: Install and build
         run: npm install
 
