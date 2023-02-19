@@ -23,6 +23,9 @@ jobs:
       - name: Install and build
         run: npm install
 
+      - name: Prettier Check
+        run: npm run prettier:check
+
       - name: Validate TypeScript
         run: npm run typecheck
 

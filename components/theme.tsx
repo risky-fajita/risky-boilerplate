@@ -1,12 +1,12 @@
 import { createStyles } from '@mantine/core';
 
 export const themeColours = {
-    red: '#FF6363',
-    darkBlue: '#0B3954',
-    lightBlue: '#BFD7EA',
-    orange: '#F98824',
-    lightOrange: '#FCC16D',
-    white: '#FEFFFE',
+  red: '#FF6363',
+  darkBlue: '#0B3954',
+  lightBlue: '#BFD7EA',
+  orange: '#F98824',
+  lightOrange: '#FCC16D',
+  white: '#FEFFFE',
 };
 
 const textStyles = createStyles((theme) => ({
@@ -35,5 +35,4 @@ export default createStyles((theme) => ({
       fontSize: 45,
     },
   },
-
 }));
