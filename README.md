@@ -1,4 +1,14 @@
+<p align="center">
+  <img src="public/logo_dark.svg" />
+</p>
+
+[![Dependency Checks](https://github.com/risky-fajita/risky-boilerplate/actions/workflows/dependency-review.yml/badge.svg?branch=master)](https://github.com/risky-fajita/risky-boilerplate/actions/workflows/dependency-review.yml)
+
+[![Tests](https://github.com/risky-fajita/risky-boilerplate/actions/workflows/CI.yml/badge.svg)](https://github.com/risky-fajita/risky-boilerplate/actions/workflows/CI.yml)
+
 # Risky Fajita Boilerplate
+
+A boilerplate for building Mantine based apps with NextJS, Storybook, Jest, Cypress, and Reassure. Opinionated, but with a lot of flexibility to get you going quicker.
 
 Click `Use this template` button at the header of repository. Note that you have to be logged in to GitHub to generate template.
 
@@ -13,12 +23,18 @@ This template comes with several essential features (initially from the fanastic
 - ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
 
 and some extra RiskyFajita Bonus features:
+
+App:
 - Preconfigured responsive app wrapper with examples preset
 - Simple globalConfig object for cascading names
 - Configured light/dark theme switching
-- Cypress e2e tests and component level tests
-- Component performance tests with reassure
-- Pre-configured github actions template for CI/CD purposes 
+
+Testing:
+- Cypress e2e and component level tests
+- Component performance tests with reassure (providing MR comments on performance regressions)
+- Pre-configured github actions template that
+    - Runs tests on MRs against master
+    - Deploys storybook to github pages on merge to master
 
 ## npm scripts
 
