@@ -11,4 +11,4 @@ const Template: ComponentStory<typeof TemplateName> = (args) => <TemplateName {.
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});
-Primary.args = { text: 'text'};
+Primary.args = { text: 'text' };

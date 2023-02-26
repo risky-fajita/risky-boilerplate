@@ -4,9 +4,7 @@ import { TemplateName } from '.';
 
 describe('<TemplateName />', () => {
   beforeEach(() => {
-    cy.mount(
-        <TemplateName text={'text'}/>
-    );
+    cy.mount(<TemplateName text={'text'} />);
   });
 
   it('renders', () => {

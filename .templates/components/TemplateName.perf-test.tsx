@@ -4,7 +4,5 @@ import { measurePerformance } from 'reassure';
 import { TemplateName } from '.';
 
 test('TemplateName performance', async () => {
-  await measurePerformance(
-      <TemplateName text="text"/>
-  );
+  await measurePerformance(<TemplateName text="text" />);
 });
