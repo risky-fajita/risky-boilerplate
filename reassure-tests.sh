@@ -12,6 +12,6 @@ npm install --force
 yarn reassure --baseline
 
 # Gather current perf measurements & compare results
-git switch --detach -
+git switch --detach --force -
 npm install --force
 yarn reassure
