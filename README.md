@@ -2,8 +2,6 @@
   <img src="public/logo_dark.svg" />
 </p>
 
-[![Dependency Checks](https://github.com/risky-fajita/risky-boilerplate/actions/workflows/dependency-review.yml/badge.svg?branch=master)](https://github.com/risky-fajita/risky-boilerplate/actions/workflows/dependency-review.yml)
-
 [![Tests](https://github.com/risky-fajita/risky-boilerplate/actions/workflows/CI.yml/badge.svg)](https://github.com/risky-fajita/risky-boilerplate/actions/workflows/CI.yml)
 
 # Risky Fajita Boilerplate
