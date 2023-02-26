@@ -7,7 +7,7 @@ BASELINE_BRANCH=${BASELINE_BRANCH:="master"}
 git fetch origin
 
 # Gather baseline perf measurements
-git switch "$BASELINE_BRANCH"
+git switch "$BASELINE_BRANCH" --force
 npm install --force
 yarn reassure --baseline
 
