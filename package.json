@@ -17,10 +17,12 @@
     "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
     "storybook": "start-storybook -p 7001",
     "storybook:build": "build-storybook",
+    "cy:components" : "cypress run --component",
+    "cy:e2e" : "cypress run",
     "components": "start-server-and-test dev http://localhost:3000 cypress --component",
-    "components:headless": "start-server-and-test dev http://localhost:3000 cypress run --component",
+    "components:headless": "start-server-and-test dev http://localhost:3000 cy:components",
     "e2e": "start-server-and-test dev http://localhost:3000 cypress open",
-    "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress run"
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 cy:e2e"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
